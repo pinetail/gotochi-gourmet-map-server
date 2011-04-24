@@ -43,6 +43,7 @@ class ApiController < ApplicationController
   def latest_version
     respond_to do |format|
       format.html # new.html.erb
+      format.json  { render :json => "20110424" }
     end
   end
 end
