@@ -31,11 +31,18 @@ class ApiController < ApplicationController
     output = FasterCSV.generate(:force_quotes => true) do |csv|
 #    CSV::Writer.generate(output = "") do |csv|
       for shop in @shops
-        csv << [shop.id ,shop.category, shop.name, shop.address ]
+        csv << [shop.name, shop.address, shop.tel, shop.category, shop.tabelog_id, shop.business_hours, 
+        shop.holiday, shop.latitude, shop.longitude, shop.score, shop.tabelog_url, shop.tabelog_mobile_url, 
+        shop.station, shop.memo]
       end
     end
     # CSVファイルの出力
     send_data(NKF.nkf('-U -s -Lw', output), :type => cntnt_type, :filename => file_name)
   end
-
+  
+  def latest_version
+    respond_to do |format|
+      format.html # new.html.erb
+    end
+  end
 end

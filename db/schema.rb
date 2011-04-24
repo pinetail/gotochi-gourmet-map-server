@@ -10,15 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110403063340) do
+ActiveRecord::Schema.define(:version => 20110404122158) do
 
   create_table "shops", :force => true do |t|
     t.string   "name"
     t.string   "address"
     t.string   "tel"
+    t.string   "category"
+    t.integer  "tabelog_id"
+    t.string   "business_hours"
+    t.string   "holiday"
+    t.decimal  "latitude",           :precision => 17, :scale => 14, :default => 0.0
+    t.decimal  "longitude",          :precision => 17, :scale => 14, :default => 0.0
+    t.float    "score"
+    t.string   "tabelog_url"
+    t.string   "tabelog_mobile_url"
+    t.string   "station"
+    t.text     "memo"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category"
   end
 
 end

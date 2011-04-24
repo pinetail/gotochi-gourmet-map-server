@@ -1,9 +1,11 @@
 GotochiGourmetMapServer::Application.routes.draw do
+  resources :shops
+
   get "api/export"
 
   get "api/get"
-
-  resources :shops
+  
+  get "api/latest_version"
 
   get "shops/index"
 

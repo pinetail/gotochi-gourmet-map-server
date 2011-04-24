@@ -4,10 +4,30 @@ one:
   name: MyString
   address: MyString
   tel: MyString
-  category: 1
+  category: MyString
+  tabelog_id: 1
+  business_hours: MyString
+  holiday: MyString
+  latitude: 1.5
+  longitude: 1.5
+  score: 1.5
+  tabelog_url: MyString
+  tabelog_mobile_url: MyString
+  station: MyString
+  memo: MyText
 
 two:
   name: MyString
   address: MyString
   tel: MyString
-  category: 1
+  category: MyString
+  tabelog_id: 1
+  business_hours: MyString
+  holiday: MyString
+  latitude: 1.5
+  longitude: 1.5
+  score: 1.5
+  tabelog_url: MyString
+  tabelog_mobile_url: MyString
+  station: MyString
+  memo: MyText
