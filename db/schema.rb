@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110404122158) do
+ActiveRecord::Schema.define(:version => 20110430140621) do
 
   create_table "shops", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110404122158) do
     t.text     "memo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "use_flg"
   end
 
 end
