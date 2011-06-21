@@ -25,10 +25,12 @@ class ApiController < ApplicationController
       cntnt_type = "text/csv"
     end
     
-    # ファイル名称の設定
-    file_name = "hoge.csv"
+        # ファイル名称の設定
+    file_name = Time.now.strftime("%Y%m%d")
+    tmp_zip = "#{RAILS_ROOT}/public/system/files/#{file_name}.zip"
+    
     # CSVオブジェクトを生成し、データをセットしていく
-    output = FasterCSV.generate(:force_quotes => true) do |csv|
+    csv_text = FasterCSV.generate(:force_quotes => true) do |csv|
 #    CSV::Writer.generate(output = "") do |csv|
       for shop in @shops
         csv << [shop.name, shop.address, shop.tel, shop.category, shop.tabelog_id, shop.business_hours, 
@@ -36,8 +38,13 @@ class ApiController < ApplicationController
         shop.station, shop.memo]
       end
     end
+    
+    Zip::Archive.open(tmp_zip, Zip::CREATE) do |ar|
+      ar.add_buffer("#{file_name}.csv", NKF.nkf('-U -s -Lw', csv_text))
+    end
+
     # CSVファイルの出力
-    send_data(NKF.nkf('-U -s -Lw', output), :type => cntnt_type, :filename => file_name)
+#    send_data(NKF.nkf('-U -s -Lw', output), :type => cntnt_type, :filename => file_name)
   end
   
   def latest_version
