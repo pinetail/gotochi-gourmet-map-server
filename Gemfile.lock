@@ -65,6 +65,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.26)
+    zipruby (0.3.6)
 
 PLATFORMS
   ruby
@@ -73,3 +74,4 @@ DEPENDENCIES
   fastercsv
   mysql2
   rails (= 3.0.5)
+  zipruby
