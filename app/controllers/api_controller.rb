@@ -13,7 +13,8 @@ class ApiController < ApplicationController
   def export
     
     # データベースからの検索処理
-    @shops = Shop.all
+#    @shops = Shop.all
+    @shops = Shop.where('use_flg = 1')
     
     # 出力ファイルのコンテンツタイプの決定
     cntnt_type = ""
@@ -33,7 +34,7 @@ class ApiController < ApplicationController
     csv_text = FasterCSV.generate(:force_quotes => true) do |csv|
 #    CSV::Writer.generate(output = "") do |csv|
       for shop in @shops
-        csv << [shop.name, shop.address, shop.tel, shop.category, shop.tabelog_id, shop.business_hours, 
+        csv << [shop.name, shop.address, shop.tel, shop.gotochi_category, shop.tabelog_id, shop.business_hours, 
         shop.holiday, shop.latitude, shop.longitude, shop.score, shop.tabelog_url, shop.tabelog_mobile_url, 
         shop.station, shop.memo]
       end
