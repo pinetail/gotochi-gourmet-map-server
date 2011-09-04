@@ -13,6 +13,8 @@ GotochiGourmetMapServer::Application.routes.draw do
   
   post "api/create"
 
+  get "api/get_categories"
+
   get "shops/index"
 
   get "shop/index"

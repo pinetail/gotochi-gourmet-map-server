@@ -68,4 +68,13 @@ class ApiController < ApplicationController
       end
     end
   end
+  
+  def get_categories
+    @category = Category.where('use_flg = 1').order('priority asc')
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json  { render :json => @category }
+    end
+  end
 end
