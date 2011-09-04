@@ -1,0 +1,31 @@
+<h1>Listing shops_requests</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Tabelog</th>
+    <th>Tabelog url</th>
+    <th>Gotochi category</th>
+    <th>Ip address</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shops_requests.each do |shops_request| %>
+  <tr>
+    <td><%= shops_request.name %></td>
+    <td><%= shops_request.tabelog_id %></td>
+    <td><%= shops_request.tabelog_url %></td>
+    <td><%= shops_request.gotochi_category %></td>
+    <td><%= shops_request.ip_address %></td>
+    <td><%= link_to 'Show', shops_request %></td>
+    <td><%= link_to 'Edit', edit_shops_request_path(shops_request) %></td>
+    <td><%= link_to 'Destroy', shops_request, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Shops request', new_shops_request_path %>

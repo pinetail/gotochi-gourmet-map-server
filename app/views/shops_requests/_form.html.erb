@@ -1,0 +1,37 @@
+<%= form_for(@shops_request) do |f| %>
+  <% if @shops_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shops_request.errors.count, "error") %> prohibited this shops_request from being saved:</h2>
+
+      <ul>
+      <% @shops_request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :tabelog_id %><br />
+    <%= f.text_field :tabelog_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tabelog_url %><br />
+    <%= f.text_field :tabelog_url %>
+  </div>
+  <div class="field">
+    <%= f.label :gotochi_category %><br />
+    <%= f.text_field :gotochi_category %>
+  </div>
+  <div class="field">
+    <%= f.label :ip_address %><br />
+    <%= f.text_field :ip_address %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

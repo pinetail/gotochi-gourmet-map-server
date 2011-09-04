@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @shops_request.name %>
+</p>
+
+<p>
+  <b>Tabelog:</b>
+  <%= @shops_request.tabelog_id %>
+</p>
+
+<p>
+  <b>Tabelog url:</b>
+  <%= @shops_request.tabelog_url %>
+</p>
+
+<p>
+  <b>Gotochi category:</b>
+  <%= @shops_request.gotochi_category %>
+</p>
+
+<p>
+  <b>Ip address:</b>
+  <%= @shops_request.ip_address %>
+</p>
+
+
+<%= link_to 'Edit', edit_shops_request_path(@shops_request) %> |
+<%= link_to 'Back', shops_requests_path %>

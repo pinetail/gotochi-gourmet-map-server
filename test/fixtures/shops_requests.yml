@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  tabelog_id: 
+  tabelog_url: MyString
+  gotochi_category: MyString
+  ip_address: MyString
+
+two:
+  name: MyString
+  tabelog_id: 
+  tabelog_url: MyString
+  gotochi_category: MyString
+  ip_address: MyString
