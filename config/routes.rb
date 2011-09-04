@@ -8,6 +8,8 @@ GotochiGourmetMapServer::Application.routes.draw do
   get "api/get"
   
   get "api/latest_version"
+  
+  post "api/create"
 
   get "shops/index"
 

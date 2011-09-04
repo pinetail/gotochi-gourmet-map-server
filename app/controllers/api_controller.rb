@@ -54,4 +54,18 @@ class ApiController < ApplicationController
       format.json  { render :json => "20110424" }
     end
   end
+  
+  def create
+    @shop = Shop.new(params[:shop])
+
+    respond_to do |format|
+      if @shop.save
+        format.html { redirect_to(@shop, :notice => 'Shop was successfully created.') }
+        format.xml  { render :xml => @shop, :status => :created, :location => @shop }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @shop.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 end
