@@ -56,15 +56,15 @@ class ApiController < ApplicationController
   end
   
   def create
-    @shop = Shop.new(params[:shop])
+    @shops_request = ShopsRequest.new(params[:shops_request])
 
     respond_to do |format|
-      if @shop.save
-        format.html { redirect_to(@shop, :notice => 'Shop was successfully created.') }
-        format.xml  { render :xml => @shop, :status => :created, :location => @shop }
+      if @shops_request.save
+        format.html { redirect_to(@shops_request, :notice => 'Shop was successfully created.') }
+        format.xml  { render :xml => @shops_request, :status => :created, :location => @shops_request }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @shop.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @shops_request.errors, :status => :unprocessable_entity }
       end
     end
   end
