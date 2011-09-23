@@ -46,9 +46,11 @@ class ShopsFavoritesController < ApplicationController
       if @shops_favorite.save
         format.html { redirect_to(@shops_favorite, :notice => 'Shops favorite was successfully created.') }
         format.xml  { render :xml => @shops_favorite, :status => :created, :location => @shops_favorite }
+        format.json { render :json => @shops_favorite, :status => :created, :location => @shops_favorite }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @shops_favorite.errors, :status => :unprocessable_entity }
+        format.json { render :json => @shops_favorite.errors, :status => :unprocessable_entity }
       end
     end
   end
