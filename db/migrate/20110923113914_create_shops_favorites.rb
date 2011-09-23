@@ -1,7 +1,7 @@
 class CreateShopsFavorites < ActiveRecord::Migration
   def self.up
     create_table :shops_favorites do |t|
-      t.int :tabelog_id
+      t.integer :tabelog_id
       t.text :memo
 
       t.timestamps
