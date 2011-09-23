@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tabelog:</b>
+  <%= @shops_favorite.tabelog_id %>
+</p>
+
+<p>
+  <b>Memo:</b>
+  <%= @shops_favorite.memo %>
+</p>
+
+
+<%= link_to 'Edit', edit_shops_favorite_path(@shops_favorite) %> |
+<%= link_to 'Back', shops_favorites_path %>

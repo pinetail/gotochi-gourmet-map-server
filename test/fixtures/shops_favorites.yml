@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tabelog_id: 
+  memo: MyText
+
+two:
+  tabelog_id: 
+  memo: MyText

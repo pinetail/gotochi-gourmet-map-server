@@ -1,4 +1,6 @@
 GotochiGourmetMapServer::Application.routes.draw do
+  resources :shops_favorites
+
   resources :categories
 
   resources :shops_requests
