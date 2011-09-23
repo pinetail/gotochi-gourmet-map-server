@@ -2,6 +2,8 @@
 
 <table>
   <tr>
+    <th>Uuid</th>
+    <th>Twitter</th>
     <th>Tabelog</th>
     <th>Memo</th>
     <th></th>
@@ -11,6 +13,8 @@
 
 <% @shops_favorites.each do |shops_favorite| %>
   <tr>
+    <td><%= shops_favorite.uuid %></td>
+    <td><%= shops_favorite.twitter_id %></td>
     <td><%= shops_favorite.tabelog_id %></td>
     <td><%= shops_favorite.memo %></td>
     <td><%= link_to 'Show', shops_favorite %></td>

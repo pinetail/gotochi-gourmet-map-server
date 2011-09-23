@@ -1,9 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  tabelog_id: 
+  uuid: MyString
+  twitter_id: 1
+  tabelog_id: 1
   memo: MyText
 
 two:
-  tabelog_id: 
+  uuid: MyString
+  twitter_id: 1
+  tabelog_id: 1
   memo: MyText
