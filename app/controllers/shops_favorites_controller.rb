@@ -86,13 +86,20 @@ class ShopsFavoritesController < ApplicationController
   # DELETE /shops_favorites/del(.:format)
   def del
     @shops_favorite = ShopsFavorite.where('uuid = ? and tabelog_id = ?', params[:shops_favorite][:uuid], params[:shops_favorite][:tabelog_id]).first
-    logger.info(@shops_favorite)
-    @shops_favorite.destroy
+    if @shops_favorite.exists?
+      @shops_favorite.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(shops_favorites_url) }
-      format.xml  { head :ok }
-      format.json { render :json => 'ok' }
+      respond_to do |format|
+        format.html { redirect_to(shops_favorites_url) }
+        format.xml  { head :ok }
+        format.json { render :json => 'ok' }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to(shops_favorites_url) }
+        format.xml  { head :ok }
+        format.json { render :json => 'not record' }
+      end
     end
   end
 end
