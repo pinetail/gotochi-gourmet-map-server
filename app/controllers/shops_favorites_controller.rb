@@ -85,7 +85,7 @@ class ShopsFavoritesController < ApplicationController
   
   # DELETE /shops_favorites/del(.:format)
   def del
-    @shops_favorite = ShopsFavorite.where('uuid = ? and tabelog_id = ?', params[:shops_favorites][:uuid], params[:shops_favorites][:tabelog_id]).first
+    @shops_favorite = ShopsFavorite.where('uuid = ? and tabelog_id = ?', params[:shops_favorite][:uuid], params[:shops_favorite][:tabelog_id]).first
     logger.info(@shops_favorite)
     @shops_favorite.destroy
 
