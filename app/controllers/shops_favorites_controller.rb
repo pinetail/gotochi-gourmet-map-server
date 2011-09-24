@@ -82,4 +82,16 @@ class ShopsFavoritesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  # DELETE /shops_favorites/del(.:format)
+  def del
+    @shops_favorite = ShopsFavorite.where('uuid = ' + param[:uuid] + '&tabelog_id = ' + param[:tabelog_id])
+    @shops_favorite.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(shops_favorites_url) }
+      format.xml  { head :ok }
+      format.json { render :json => 'ok' }
+    end
+  end
 end
