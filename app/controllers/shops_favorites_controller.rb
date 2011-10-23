@@ -102,4 +102,23 @@ class ShopsFavoritesController < ApplicationController
       end
     end
   end
+  
+    # POST /shops_favorites/upd_twitter_id(.:format)
+  def upd_twitter_id
+    @shops_favorites = ShopsFavorite.where('uuid = ?', params[:shops_favorite][:uuid]).update_all(:twitter_id => params[:shops_favorite][:twitter_id])
+    if @shops_favorites.nil?
+      respond_to do |format|
+        format.html { redirect_to(shops_favorites_url) }
+        format.xml  { head :ok }
+        format.json { render :json => 'not record' }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to(shops_favorites_url) }
+        format.xml  { head :ok }
+        format.json { render :json => 'ok' }
+      end
+    end
+  end
+
 end

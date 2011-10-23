@@ -1,6 +1,7 @@
 GotochiGourmetMapServer::Application.routes.draw do
   resources :shops_favorites do
     delete :del, :on => :collection
+    post :upd_twitter_id, :on => :collection
   end
 
   resources :categories
